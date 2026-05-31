@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>お申込み｜外国人介護人材（株式会社YSタレント）</title>
+<style>
+  :root{--green:#1f7a5a;--green-d:#155c43;--mint:#e8f5ef;--mint2:#d4ebe0;--ink:#1c2b25;--sub:#5a6b63;--line:#cfe3d8;--accent:#f0a93b;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",system-ui,sans-serif;color:var(--ink);background:#eef3f0;line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 0 50px}
+  .top{background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%);color:#fff;padding:22px 18px;text-align:center}
+  .top .brand{font-size:12px;opacity:.9;letter-spacing:1px}
+  .top h1{font-size:20px;margin:4px 0 2px;font-weight:800}
+  .top p{font-size:12px;opacity:.92}
+  .wrap{max-width:600px;margin:-14px auto 0;padding:0 14px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 20px;box-shadow:0 6px 20px rgba(20,60,40,.08);margin-bottom:14px}
+  .lbl{font-size:12.5px;font-weight:700;color:var(--green-d);margin:14px 0 6px;display:block}
+  .lbl .req{color:#e0533b;font-size:11px;margin-left:4px}
+  input[type=text],input[type=tel],input[type=email],textarea,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 12px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--green)}
+  textarea{min-height:84px;resize:vertical}
+  .choose{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+  .opt{border:2px solid var(--line);border-radius:12px;padding:13px 12px;cursor:pointer;transition:.15s;background:#fff}
+  .opt:hover{border-color:var(--green)}
+  .opt.active{border-color:var(--green);background:var(--mint)}
+  .opt .t{font-weight:800;color:var(--green-d);font-size:14px;display:flex;align-items:center;gap:7px}
+  .opt .t .num{background:var(--green);color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+  .opt .d{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.45}
+  .evbox{background:#fff8ec;border:1.5px solid var(--accent);border-radius:11px;padding:13px 14px;margin-top:12px}
+  .evbox h3{font-size:13px;color:#9a3b00;margin-bottom:5px}
+  .evbox p{font-size:12px;color:#7a4a00;line-height:1.55}
+  .evbox .big{font-size:15px;font-weight:800;color:#9a3b00}
+  .seg{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .seg label{flex:1;min-width:90px;border:1.5px solid var(--line);border-radius:9px;padding:9px;text-align:center;font-size:13px;cursor:pointer;background:#fff}
+  .seg input{display:none}
+  .seg label.on{border-color:var(--green);background:var(--mint);color:var(--green-d);font-weight:700}
+  .btn{width:100%;background:var(--green);color:#fff;border:none;border-radius:11px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;margin-top:18px}
+  .btn:hover{filter:brightness(1.06)}
+  .hint{font-size:11px;color:var(--sub);text-align:center;margin-top:9px;line-height:1.5}
+  .note{background:var(--mint);border-radius:10px;padding:11px 13px;font-size:11.5px;color:var(--green-d);margin-top:12px;line-height:1.55}
+  .err{color:#e0533b;font-size:12px;margin-top:8px;display:none}
+  .foot{text-align:center;font-size:11px;color:var(--sub);margin-top:6px;line-height:1.7}
+  .hide{display:none}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">株式会社YSタレント ｜ GLOBAL TALENT PROJECT</div>
+    <h1>外国人介護人材 お申込みフォーム</h1>
+    <p>打ち合わせ・面接会への参加をお気軽にどうぞ</p>
+  </div>
+  <div class="wrap">
+    <div class="card">
+      <span class="lbl">ご希望の内容を選択してください<span class="req">必須</span></span>
+      <div class="choose">
+        <div class="opt active" id="opt-meeting" onclick="pick('meeting')">
+          <div class="t"><span class="num">①</span>打ち合わせ希望</div>
+          <div class="d">まずは概要・費用・進め方をご説明します。</div>
+        </div>
+        <div class="opt" id="opt-event" onclick="pick('event')">
+          <div class="t"><span class="num">②</span>面接会参加</div>
+          <div class="d">9/1(火) オンライン合同面接会へのご参加。</div>
+        </div>
+      </div>
+
+      <!-- 打ち合わせ用 -->
+      <div id="sec-meeting">
+        <span class="lbl">ご希望の打ち合わせ方法</span>
+        <div class="seg" id="seg-method">
+          <label class="on"><input type="radio" name="method" value="電話" checked>電話</label>
+          <label><input type="radio" name="method" value="オンライン（Zoom等）">オンライン</label>
+          <label><input type="radio" name="method" value="どちらでも可">どちらでも可</label>
+        </div>
+      </div>
+
+      <!-- 面接会用 -->
+      <div id="sec-event" class="hide">
+        <div class="evbox">
+          <h3>📅 オンライン合同面接会</h3>
+          <p><span class="big">2026年9月1日（火）</span><br>インドネシア・ミャンマー <b>合同オンライン面接会（予定）</b><br>採用ご担当者さま向け。参加費無料。</p>
+        </div>
+        <span class="lbl">関心のある送り出し国（複数選択可）</span>
+        <div class="seg" id="seg-country">
+          <label><input type="checkbox" name="country" value="インドネシア">インドネシア</label>
+          <label><input type="checkbox" name="country" value="ミャンマー">ミャンマー</label>
+          <label><input type="checkbox" name="country" value="両方／未定">両方／未定</label>
+        </div>
+        <span class="lbl">ご参加予定人数（任意）</span>
+        <input type="text" id="ppl" placeholder="例：2名">
+      </div>
+
+      <span class="lbl">会社名 / 法人名<span class="req">必須</span></span>
+      <input type="text" id="company" placeholder="例：株式会社○○">
+      <span class="lbl">お名前<span class="req">必須</span></span>
+      <input type="text" id="name" placeholder="例：山田 太郎">
+      <span class="lbl">電話番号</span>
+      <input type="tel" id="tel" placeholder="例：045-319-6844">
+      <span class="lbl">メールアドレス<span class="req">必須</span></span>
+      <input type="email" id="email" placeholder="例：info@example.co.jp">
+      <span class="lbl">ご質問・ご要望（任意）</span>
+      <textarea id="memo" placeholder="必要な職種・人数・時期、ご質問など"></textarea>
+
+      <div class="err" id="err">必須項目（会社名・お名前・メールアドレス）をご入力ください。</div>
+      <button class="btn" onclick="send()">この内容で申込みメールを作成</button>
+      <div class="hint">ボタンを押すと、入力内容を記載したメール作成画面が開きます。<br>そのまま送信してください（送信先：株式会社YSタレント）。</div>
+
+      <div class="note" id="note-meeting">
+        まずはお気軽にお申込みください。担当より、ご希望の方法で日程調整のご連絡を差し上げます。
+      </div>
+      <div class="note hide" id="note-event">
+        面接会は<b>先着順</b>です。「まず枠を押さえたい」という方もご安心ください。お申込み後に担当が事前打ち合わせを行い、詳細・条件をご説明したうえで正式参加となります。打ち合わせ後のキャンセルも可能です。
+      </div>
+    </div>
+    <div class="foot">
+      株式会社YSタレント ／ 〒231-0033 神奈川県横浜市中区長者町4-9-1 YS関内ビル<br>
+      TEL：045-319-6844 ／ https://www.ystalent.co.jp
+    </div>
+  </div>
+
+<script>
+  var current='meeting';
+  function pick(t){
+    current=t;
+    document.getElementById('opt-meeting').classList.toggle('active',t==='meeting');
+    document.getElementById('opt-event').classList.toggle('active',t==='event');
+    document.getElementById('sec-meeting').classList.toggle('hide',t!=='meeting');
+    document.getElementById('sec-event').classList.toggle('hide',t!=='event');
+    document.getElementById('note-meeting').classList.toggle('hide',t!=='meeting');
+    document.getElementById('note-event').classList.toggle('hide',t!=='event');
+  }
+  // segmented button highlight
+  document.querySelectorAll('.seg').forEach(function(seg){
+    seg.addEventListener('change',function(){
+      seg.querySelectorAll('label').forEach(function(l){
+        var inp=l.querySelector('input');
+        l.classList.toggle('on',inp.checked);
+      });
+    });
+  });
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+  function send(){
+    var company=val('company'),name=val('name'),email=val('email');
+    if(!company||!name||!email){document.getElementById('err').style.display='block';window.scrollTo(0,document.body.scrollHeight);return;}
+    document.getElementById('err').style.display='none';
+    var lines=[];
+    if(current==='meeting'){
+      lines.push('【お申込み種別】① 打ち合わせ希望');
+      var m=document.querySelector('input[name=method]:checked');
+      lines.push('ご希望の打ち合わせ方法：'+(m?m.value:''));
+    }else{
+      lines.push('【お申込み種別】② 面接会参加');
+      lines.push('面接会：2026年9月1日(火) インドネシア・ミャンマー合同オンライン（予定）');
+      var cs=[];document.querySelectorAll('input[name=country]:checked').forEach(function(c){cs.push(c.value);});
+      lines.push('関心のある国：'+(cs.length?cs.join('・'):'未選択'));
+      lines.push('ご参加予定人数：'+(val('ppl')||'未記入'));
+    }
+    lines.push('');
+    lines.push('会社名／法人名：'+company);
+    lines.push('お名前：'+name);
+    lines.push('電話番号：'+(val('tel')||'未記入'));
+    lines.push('メールアドレス：'+email);
+    lines.push('ご質問・ご要望：');
+    lines.push(val('memo')||'（なし）');
+    var subj=(current==='meeting'?'【介護｜YSタレント】打ち合わせ希望のお申込み':'【介護｜YSタレント】面接会(9/1)参加のお申込み');
+    var href='mailto:tomoyuki.maeda@ystalent.co.jp?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(lines.join('\n'));
+    window.location.href=href;
+  }
+</script>
+</body>
+</html>
