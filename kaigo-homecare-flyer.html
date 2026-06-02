@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>訪問介護 × 外国人材｜株式会社YSタレント</title>
+<title>訪問介護 × 外国人材 2つのルート｜株式会社YSタレント</title>
 <style>
   :root{
     --green:#1f7a5a; --green-d:#155c43; --mint:#e8f5ef; --mint2:#d4ebe0;
-    --ink:#1c2b25; --sub:#5a6b63; --line:#cfe3d8; --accent:#f0a93b; --blue:#2f6db0; --blue-d:#234f80; --paper:#fff;
+    --ink:#1c2b25; --sub:#5a6b63; --line:#cfe3d8; --accent:#f0a93b;
+    --blue:#2f6db0; --blue-d:#234f80; --bmint:#e9f1fa; --bline:#cddff0; --paper:#fff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",system-ui,sans-serif;color:var(--ink);background:#5b6b64;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -17,74 +18,86 @@
   .bar button{background:var(--accent);color:#3a2400;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer}
   .bar button:hover{filter:brightness(1.06)}
   .wrap{max-width:820px;margin:0 auto;padding:18px 14px 50px}
-  .page{background:var(--paper);width:210mm;min-height:297mm;margin:0 auto 22px;padding:13mm 13mm;position:relative;box-shadow:0 8px 30px rgba(0,0,0,.25);overflow:hidden}
-  .ph{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--green);padding-bottom:8px}
+  .page{background:var(--paper);width:210mm;min-height:297mm;margin:0 auto 22px;padding:12mm 12mm;position:relative;box-shadow:0 8px 30px rgba(0,0,0,.25);overflow:hidden}
+  .ph{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--green);padding-bottom:7px}
   .brand{font-size:13px;color:var(--green-d);font-weight:700;letter-spacing:.5px}
   .brand small{display:block;font-weight:400;color:var(--sub);font-size:10.5px;letter-spacing:2px;margin-top:1px}
   .gtp{font-size:10px;color:var(--sub);text-align:right;letter-spacing:1px;line-height:1.4}
   .gtp b{color:var(--green);font-size:11px}
-  .hero{margin:14px 0 8px}
+  .hero{margin:12px 0 8px}
   .eyebrow{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:.5px}
-  .hero h1{font-size:26px;line-height:1.32;margin:9px 0 6px;color:var(--green-d);font-weight:800}
+  .hero h1{font-size:24px;line-height:1.32;margin:8px 0 5px;color:var(--green-d);font-weight:800}
   .hero h1 .hl{color:var(--accent)}
-  .hero p{font-size:12.5px;color:var(--sub);max-width:97%}
-  .sec-t{font-size:15px;font-weight:800;color:var(--green-d);margin:15px 0 9px;display:flex;align-items:center;gap:8px}
-  .sec-t::before{content:"";width:6px;height:18px;background:var(--accent);border-radius:3px;display:inline-block}
-  /* big feature box */
-  .feature{background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%);color:#fff;border-radius:14px;padding:18px 20px;margin-top:6px;position:relative;overflow:hidden}
-  .feature .flag{display:inline-block;background:#ffd27a;color:#5a3d00;font-size:11px;font-weight:800;padding:3px 11px;border-radius:6px}
-  .feature h2{font-size:21px;margin:9px 0 8px;line-height:1.35}
-  .feature h2 .y{color:#ffd27a}
-  .feature .lead{font-size:12.5px;color:#e6f3ec;line-height:1.6}
-  .badge-row{display:flex;gap:10px;margin-top:13px;flex-wrap:wrap}
-  .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:9px 13px;flex:1;min-width:150px}
-  .badge .n{font-size:16px;font-weight:800;color:#fff}
-  .badge .d{font-size:10.5px;color:#d6ece2;margin-top:2px}
-  .point{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
-  .pcard{background:var(--mint);border:1px solid var(--line);border-radius:11px;padding:12px 13px}
-  .pcard h3{font-size:12.5px;color:var(--green-d);font-weight:700;margin-bottom:4px}
-  .pcard p{font-size:11px;color:var(--sub);line-height:1.5}
-  .note-line{background:#fff8ec;border:1.5px solid var(--accent);border-radius:10px;padding:10px 13px;margin-top:12px;font-size:11.3px;color:#7a4a00;line-height:1.5}
+  .hero p{font-size:12px;color:var(--sub);max-width:98%}
+  .sec-t{font-size:14.5px;font-weight:800;color:var(--green-d);margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+  .sec-t::before{content:"";width:6px;height:17px;background:var(--accent);border-radius:3px;display:inline-block}
+  /* two pillars */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  .pillar{border-radius:14px;padding:15px 16px;color:#fff;position:relative;overflow:hidden}
+  .pillar.g{background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%)}
+  .pillar.b{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-d) 100%)}
+  .pillar .route{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px}
+  .pillar .from{font-size:12px;margin-top:9px;opacity:.92}
+  .pillar h2{font-size:19px;font-weight:800;line-height:1.3;margin:3px 0 7px}
+  .pillar h2 .y{color:#ffd27a}
+  .pillar .desc{font-size:11px;line-height:1.55;opacity:.96}
+  .pillar .tag{display:inline-block;margin-top:9px;background:#fff;color:var(--green-d);font-size:11px;font-weight:800;padding:4px 10px;border-radius:7px}
+  .pillar.b .tag{color:var(--blue-d)}
+  /* requirements scheme */
+  .scheme{background:var(--mint);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .scheme .lead{font-size:11.5px;color:var(--ink);line-height:1.6;margin-bottom:10px}
+  .scheme .lead b{color:var(--green-d)}
+  table.req{width:100%;border-collapse:collapse;font-size:11.5px;background:#fff;border-radius:8px;overflow:hidden}
+  table.req th,table.req td{border:1px solid var(--line);padding:8px 10px;text-align:center}
+  table.req th{background:var(--green-d);color:#fff;font-weight:700;font-size:11px}
+  table.req td.s{text-align:left;font-weight:700;color:var(--green-d);background:#fafdfb}
+  table.req .ok{color:#16a34a;font-weight:800}
+  table.req .no{color:#9aa3b8;font-weight:700}
+  table.req .pt{font-size:10.5px;color:var(--sub);text-align:left}
+  table.req .pt b{color:var(--accent)}
+  .note-line{background:#fff8ec;border:1.5px solid var(--accent);border-radius:10px;padding:10px 13px;margin-top:11px;font-size:11.3px;color:#7a4a00;line-height:1.55}
   .note-line b{color:#9a3b00}
-  .pf{position:absolute;bottom:8mm;left:13mm;right:13mm;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--sub);border-top:1px solid var(--line);padding-top:6px}
+  .pf{position:absolute;bottom:7mm;left:12mm;right:12mm;display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--sub);border-top:1px solid var(--line);padding-top:6px}
   .pf b{color:var(--green-d)}
-  /* back page */
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-  .vbox{border:1px solid var(--line);border-radius:11px;overflow:hidden}
-  .vbox .top{color:#fff;padding:7px 12px;font-weight:800;font-size:13px;display:flex;justify-content:space-between;align-items:center}
-  .vbox .top span{font-size:9.5px;font-weight:500;opacity:.9}
-  .vbox.idn .top{background:var(--blue-d)}
-  .vbox.lic .top{background:var(--green-d)}
-  .vbox .body{padding:10px 12px;font-size:11px;color:var(--ink);line-height:1.55}
-  .vbox .body b{color:var(--green-d)}
-  .vbox.idn .body b{color:var(--blue-d)}
-  .flow{display:flex;gap:6px;align-items:stretch}
-  .step{flex:1;background:var(--mint);border:1px solid var(--line);border-radius:10px;padding:8px 8px;position:relative}
-  .step .n{width:19px;height:19px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
-  .step h4{font-size:10.5px;color:var(--green-d);margin-bottom:2px;font-weight:700}
-  .step p{font-size:9.3px;color:var(--sub);line-height:1.4}
-  .step .ar{position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--green);font-size:13px;font-weight:700;z-index:2}
-  .miniflow{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:4px}
-  .miniflow .s{flex:1;min-width:84px;background:var(--blue);color:#fff;border-radius:9px;padding:7px 8px;font-size:10px;font-weight:700;line-height:1.25;text-align:center}
-  .miniflow .s small{display:block;font-weight:500;opacity:.9;font-size:8.6px;margin-top:1px}
-  .miniflow .a{color:var(--blue);font-weight:800;font-size:12px}
-  .yst{background:var(--mint);border:1px solid var(--line);border-radius:11px;padding:12px 14px}
-  .yst .row{display:flex;gap:10px;flex-wrap:wrap}
-  .yst .stat{flex:1;min-width:120px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px}
-  .yst .stat b{display:block;font-size:15px;color:var(--green-d);font-weight:800;line-height:1.2}
-  .yst .stat span{font-size:9.8px;color:var(--sub)}
-  .yst ul{list-style:none;margin-top:9px}
-  .yst li{font-size:11px;padding-left:17px;position:relative;margin-bottom:4px;line-height:1.5}
-  .yst li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
-  .yst li b{color:var(--green-d)}
-  .contact{background:var(--green-d);color:#fff;border-radius:13px;padding:14px 18px;margin-top:13px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  /* route flows (back) */
+  .routebox{border-radius:13px;padding:13px 15px;margin-bottom:12px}
+  .routebox.g{background:var(--mint);border:1px solid var(--line)}
+  .routebox.b{background:var(--bmint);border:1px solid var(--bline)}
+  .routebox .rt{font-size:14px;font-weight:800;margin-bottom:3px}
+  .routebox.g .rt{color:var(--green-d)}
+  .routebox.b .rt{color:var(--blue-d)}
+  .routebox .rsub{font-size:11px;color:var(--sub);margin-bottom:9px}
+  .mf{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+  .mf .s{flex:1;min-width:80px;border-radius:9px;padding:7px 7px;font-size:9.8px;font-weight:700;line-height:1.25;text-align:center;color:#fff}
+  .mf .s small{display:block;font-weight:500;opacity:.9;font-size:8.4px;margin-top:1px}
+  .routebox.g .mf .s{background:var(--green)}
+  .routebox.b .mf .s{background:var(--blue)}
+  .mf .s.hi{background:#ffd27a;color:#5a3d00}
+  .mf .s.hi small{opacity:1;color:#7a5300}
+  .mf .a{font-weight:800;font-size:12px}
+  .routebox.g .mf .a{color:var(--green)} .routebox.b .mf .a{color:var(--blue)}
+  .only{margin-top:9px;font-size:11px;line-height:1.5;background:#fff;border-radius:8px;padding:8px 11px}
+  .only b{color:var(--accent)}
+  /* YST strength */
+  .yst{background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%);color:#fff;border-radius:13px;padding:15px 17px}
+  .yst h3{font-size:15px;font-weight:800;margin-bottom:4px}
+  .yst h3 .y{color:#ffd27a}
+  .yst .lead{font-size:11.5px;color:#e6f3ec;line-height:1.6}
+  .yst .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}
+  .yst .cell{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:9px;padding:9px 11px;font-size:11px;line-height:1.5}
+  .yst .cell b{color:#ffd27a}
+  .yst .stats{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .yst .st{flex:1;min-width:110px;text-align:center;background:rgba(255,255,255,.14);border-radius:9px;padding:7px}
+  .yst .st b{display:block;font-size:13.5px;font-weight:800}
+  .yst .st span{font-size:9.5px;opacity:.9}
+  .contact{background:var(--green-d);color:#fff;border-radius:12px;padding:13px 17px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:14px}
   .contact h2{font-size:14px;margin-bottom:3px}
   .contact p{font-size:11px;color:#cfe9dd}
   .contact .r{font-size:10px;text-align:right;line-height:1.7}
   .contact .r b{font-size:12px}
   @media print{
     body{background:#fff}.bar{display:none}.wrap{padding:0;max-width:none}
-    .page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:12mm}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:11mm}
     .page:first-of-type{page-break-after:always}
     @page{size:A4;margin:0}
   }
@@ -92,7 +105,7 @@
 </head>
 <body>
 <div class="bar no-print">
-  <b>訪問介護 × 外国人材 チラシ（A4両面）</b>
+  <b>訪問介護 × 外国人材 2つのルート（A4両面）</b>
   <button onclick="window.print()">🖨 印刷 / PDF保存</button>
 </div>
 <div class="wrap">
@@ -106,29 +119,41 @@
 
     <div class="hero">
       <span class="eyebrow">介護事業者さま向け</span>
-      <h1>訪問介護の人手不足に、<br>ミャンマーの<span class="hl">「N2人材」</span>を。</h1>
-      <p>2025年4月、特定技能・技能実習の外国人材も訪問介護に従事できるようになりました。YSタレントは、日本語N2レベルの即戦力をミャンマーからご紹介します。</p>
+      <h1>訪問介護の人材確保を、<span class="hl">2つのルート</span>で。</h1>
+      <p>訪問系サービスには「要件の壁」があります。YSタレントは、<b>ミャンマー</b>と<b>インドネシア</b>、それぞれの国の強みを活かした2つのルートで、その壁を越えて人材をご提供します。</p>
     </div>
 
-    <div class="feature">
-      <span class="flag">ミャンマー × 日本語N2</span>
-      <h2>N2人材なら、<span class="y">実務経験1年の要件が免除に。</span></h2>
-      <div class="lead">訪問系サービスの従事には原則「初任者研修修了＋実務経験1年」が必要ですが、<b style="color:#fff">日本語N2相当の人材は、実務経験1年未満でも訪問系に従事可能</b>（特例措置・受入事業所の判断）。早期に訪問介護の現場へ配置できます。</div>
-      <div class="badge-row">
-        <div class="badge"><div class="n">日本語 N2</div><div class="d">利用者・家族との円滑なコミュニケーション</div></div>
-        <div class="badge"><div class="n">実務経験1年 → 免除</div><div class="d">特例措置で早期に訪問系へ</div></div>
-        <div class="badge"><div class="n">2025.4 解禁</div><div class="d">特定技能・技能実習が訪問系に従事可能</div></div>
+    <div class="pillars">
+      <div class="pillar g">
+        <span class="route">ルート①　ミャンマー × 日本語N2</span>
+        <div class="from">→ 訪問介護へ</div>
+        <h2>N2人材で、<span class="y">実務経験1年を免除。</span></h2>
+        <div class="desc">日本語N2レベルまで養成した人材をご紹介。N2相当なら、訪問系従事に必要な「実務経験1年」が免除（特例）され、早期に訪問介護へ配置できます。</div>
+        <span class="tag">N2養成は ミャンマー</span>
+      </div>
+      <div class="pillar b">
+        <span class="route">ルート②　インドネシア × 免許切替</span>
+        <div class="from">→ 訪問入浴へ</div>
+        <h2>免許切替で、<span class="y">訪問入浴に即戦力。</span></h2>
+        <div class="desc">訪問入浴は実務経験・初任者研修が不要。移動に必要な運転免許は、外国免許切替（外免切替）で対応し、来日後すぐに現場へ。</div>
+        <span class="tag">免許切替は インドネシア</span>
       </div>
     </div>
 
-    <div class="sec-t">なぜ「ミャンマー人材」なのか</div>
-    <div class="point">
-      <div class="pcard"><h3>介護との高い相性</h3><p>ホスピタリティが高く、対人ケアへの適性が抜群。利用者宅での丁寧な対応が期待できます。</p></div>
-      <div class="pcard"><h3>旺盛な学習意欲</h3><p>日本語学習意欲が極めて高く、N2レベルまで到達した真面目でハングリーな人材を育成・選抜。</p></div>
+    <div class="sec-t">まず知っておきたい｜訪問系サービスの受入要件</div>
+    <div class="scheme">
+      <div class="lead">訪問系サービスへの従事には、原則として<b>「介護職員初任者研修の修了 ＋ 実務経験1年」</b>が必要です（2025年4月、特定技能・技能実習も訪問系に従事可能に）。一方で、<b>サービスの種類によって要件は異なり</b>、ミャンマー・インドネシアの強みで、この要件を上手にクリアできます。</div>
+      <table class="req">
+        <thead><tr><th style="width:24%">サービス</th><th>初任者研修</th><th>実務経験1年</th><th style="width:40%">ポイント</th></tr></thead>
+        <tbody>
+          <tr><td class="s">訪問介護</td><td class="ok">必要</td><td class="ok">必要</td><td class="pt">※ 日本語<b>N2なら実務経験1年は免除</b>（特例・受入事業所の判断）→ ルート①</td></tr>
+          <tr><td class="s">訪問入浴</td><td class="no">不要</td><td class="no">不要</td><td class="pt">要件のハードルが低い。移動のため<b>運転免許があると有利</b> → ルート②</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="note-line">
-      <b>訪問介護の担い手不足は深刻です。</b>有効求人倍率は高止まり、在宅ニーズは拡大の一方。N2人材なら「言葉の不安」と「実務経験要件」の二つの壁を同時に解決し、計画的な人材確保が可能になります。
+      <b>「要件の壁」を、国の強みで越える。</b>N2まで養成できるのはミャンマー、運転免許の切替をスムーズに進められるのはインドネシア。YSタレントは両国に現地法人を持ち、どちらのルートもワンストップで実現します。<b>→ 裏面で、2つのルートの流れとYSタレントだからできる理由をご紹介します。</b>
     </div>
 
     <div class="pf"><span><b>株式会社YSタレント</b>｜訪問介護 × 外国人材 採用・定着ソリューション</span><span>1 / 2</span></div>
@@ -138,51 +163,50 @@
   <div class="page">
     <div class="ph">
       <div class="brand">株式会社YSタレント<small>GLOBAL TALENT PROJECT</small></div>
-      <div class="gtp"><b>もう一つの解決策</b><br>「移動」と「早期投入」</div>
+      <div class="gtp"><b>2つのルートの流れ</b><br>＆ YSタレントの強み</div>
     </div>
 
-    <div class="sec-t">インドネシア × 運転免許 ＆ 訪問入浴の特例</div>
-    <div class="two">
-      <div class="vbox idn">
-        <div class="top">運転免許保持者をご紹介 <span>INDONESIA</span></div>
-        <div class="body"><b>訪問介護は「移動」が必須。</b>インドネシアから<b>運転免許を持つ人材</b>をご紹介し、訪問先への移動を担える体制づくりを支援。さらに<b>日本の運転免許への切替（外免切替）</b>もサポートします。運送ドライバー領域で培った外免切替対策のノウハウを活用。</div>
+    <div class="sec-t">ルート①　ミャンマー × N2 →（訪問介護）</div>
+    <div class="routebox g">
+      <div class="rt">N2を養成し、実務経験1年を免除して訪問介護へ</div>
+      <div class="rsub">「初任者研修＋実務経験1年」の壁を、日本語N2で越えるルート。</div>
+      <div class="mf">
+        <div class="s">①現地でN2養成<small>ミャンマー現地法人</small></div><span class="a">▸</span>
+        <div class="s">②特定技能(介護)合格<small>技能＋日本語</small></div><span class="a">▸</span>
+        <div class="s">③入国・就労<small>介護施設等</small></div><span class="a">▸</span>
+        <div class="s hi">④実務経験1年を免除<small>N2の特例措置</small></div><span class="a">▸</span>
+        <div class="s">⑤訪問介護へ<small>早期配置</small></div>
       </div>
-      <div class="vbox lic">
-        <div class="top">訪問入浴は早期投入が可能 <span>VISITING BATH</span></div>
-        <div class="body"><b>訪問入浴介護は、実務経験1年・初任者研修が不要。</b>要件のハードルが低く、来日後すぐに現場戦力として投入できます。チームでの訪問のため、外国人材も活躍しやすいサービスです。</div>
+      <div class="only">日本語<b>N2レベルまで養成できる送り出し体制</b>を持つのは、ミャンマー（YSタレント現地法人）ならでは。言葉の不安と実務経験要件を同時に解決します。</div>
+    </div>
+
+    <div class="sec-t">ルート②　インドネシア × 免許切替 →（訪問入浴）</div>
+    <div class="routebox b">
+      <div class="rt">運転免許を切替え、要件不要の訪問入浴で即戦力に</div>
+      <div class="rsub">実務経験・研修が不要な訪問入浴に、運転できる人材を投入するルート。</div>
+      <div class="mf">
+        <div class="s">①運転免許保持者を紹介<small>インドネシア現地法人</small></div><span class="a">▸</span>
+        <div class="s">②入国<small>特定技能(介護)</small></div><span class="a">▸</span>
+        <div class="s hi">③外国免許を切替<small>外免切替をサポート</small></div><span class="a">▸</span>
+        <div class="s">④訪問入浴へ<small>要件不要で早期投入</small></div>
       </div>
+      <div class="only">運転免許の切替を<b>スムーズに進められるのはインドネシア</b>ならでは。訪問入浴は要件のハードルが低く、移動を担える人材で現場の負担を軽減します。</div>
     </div>
 
-    <div class="sec-t">訪問介護への 受入フロー（目安：約3〜6か月）</div>
-    <div class="flow">
-      <div class="step"><div class="n">1</div><h4>人材選定・採用</h4><p>要件確認・日本語力（N2等）・雇用条件の整備<span class="ar">›</span></p></div>
-      <div class="step"><div class="n">2</div><h4>協議会 入会・届出</h4><p>JICWELSへ入会・届出。各種書類の提出<span class="ar">›</span></p></div>
-      <div class="step"><div class="n">3</div><h4>適合確認 申請</h4><p>キャリアアップ計画・訪問系要件報告等<span class="ar">›</span></p></div>
-      <div class="step"><div class="n">4</div><h4>受入・OJT</h4><p>基本研修＋責任者同行。段階的に単独訪問へ<span class="ar">›</span></p></div>
-      <div class="step"><div class="n">5</div><h4>巡回訪問対応</h4><p>5つの遵守事項の整備・利用者/家族への説明</p></div>
-    </div>
-
-    <div class="sec-t">特定技能（介護）受入の流れ</div>
-    <div class="miniflow">
-      <div class="s">①現地で育成・選抜<small>日本語＋介護基礎</small></div><span class="a">▸</span>
-      <div class="s">②試験合格<small>介護技能評価＋日本語</small></div><span class="a">▸</span>
-      <div class="s">③在留資格<small>COE申請</small></div><span class="a">▸</span>
-      <div class="s">④入国・研修<small>受入準備</small></div><span class="a">▸</span>
-      <div class="s">⑤就労<small>施設・訪問介護</small></div><span class="a">▸</span>
-      <div class="s">⑥定着<small>生活支援／資格取得</small></div>
-    </div>
-
-    <div class="sec-t">YSタレントの介護実績</div>
+    <div class="sec-t">なぜ、YSタレントなのか</div>
     <div class="yst">
-      <div class="row">
-        <div class="stat"><b>トップシェア</b><span>特定技能「介護」分野</span></div>
-        <div class="stat"><b>大手取引 多数</b><span>大手介護事業者との実績</span></div>
-        <div class="stat"><b>東南アジア3国</b><span>越・緬・尼の自社ネットワーク</span></div>
+      <h3>ミャンマーとインドネシア、<span class="y">両国に現地法人。</span></h3>
+      <div class="lead">N2養成（ミャンマー）も、免許切替（インドネシア）も、片方だけでは完結しません。両国に自社の現地法人を持つYSタレントだからこそ、<b style="color:#fff">2つのルートを一社でまるごと提供</b>できます。</div>
+      <div class="grid">
+        <div class="cell"><b>N2養成 × 免許切替</b><br>ミャンマーのN2養成と、インドネシアの免許切替を、両方ワンストップで。</div>
+        <div class="cell"><b>運送で全国いち早く</b><br>特定技能ドライバー（自動車運送）に全国でいち早く取り組み、<b>外免切替のノウハウは人材会社の中でも際立ちます。</b></div>
       </div>
-      <ul>
-        <li><b>特定技能のリーディングカンパニー。</b>P3MI・SOライセンス取得済の自社送り出し機関を通じ、教育〜送り出し〜定着まで一気通貫。</li>
-        <li><b>代表 前田 智之</b>は、特定技能事業を率いる傍ら<b>自ら介護会社を創業・大手介護会社の役員も歴任</b>。介護現場・制度・人材の三方を知る実務家が支援します。</li>
-      </ul>
+      <div class="stats">
+        <div class="st"><b>トップシェア</b><span>特定技能「介護」分野</span></div>
+        <div class="st"><b>大手取引 多数</b><span>大手介護事業者との実績</span></div>
+        <div class="st"><b>訪問介護 実績</b><span>受入・定着まで支援</span></div>
+      </div>
+      <div class="lead" style="margin-top:10px">代表 前田 智之は、特定技能事業を率いる傍ら<b style="color:#fff">自ら介護会社を創業・大手介護会社の役員も歴任</b>。介護現場・制度・人材の三方を知る実務家が、貴社の受入・定着を支援します。</div>
     </div>
 
     <div class="contact">
