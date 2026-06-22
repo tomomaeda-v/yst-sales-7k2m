@@ -37,10 +37,15 @@
   .seg label.on{border-color:var(--green);background:var(--mint);color:var(--green-d);font-weight:700}
   .btn{width:100%;background:var(--green);color:#fff;border:none;border-radius:11px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;margin-top:18px}
   .btn:hover{filter:brightness(1.06)}
+  .btn:disabled{opacity:.6;cursor:default;filter:none}
   .hint{font-size:11px;color:var(--sub);text-align:center;margin-top:9px;line-height:1.5}
   .note{background:var(--mint);border-radius:10px;padding:11px 13px;font-size:11.5px;color:var(--green-d);margin-top:12px;line-height:1.55}
   .err{color:#e0533b;font-size:12px;margin-top:8px;display:none}
   .foot{text-align:center;font-size:11px;color:var(--sub);margin-top:6px;line-height:1.7}
+  .done{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 20px;text-align:center;box-shadow:0 6px 20px rgba(20,60,40,.08);margin-bottom:14px}
+  .done .ic{width:56px;height:56px;border-radius:50%;background:var(--mint);color:var(--green);display:inline-flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:12px}
+  .done h2{font-size:18px;color:var(--green-d);margin-bottom:8px}
+  .done p{font-size:13px;color:var(--sub);line-height:1.7}
   .hide{display:none}
 </style>
 </head>
@@ -51,7 +56,7 @@
     <p>打ち合わせ・面接会への参加をお気軽にどうぞ</p>
   </div>
   <div class="wrap">
-    <div class="card">
+    <div class="card" id="formCard">
       <span class="lbl">ご希望の内容を選択してください<span class="req">必須</span></span>
       <div class="choose">
         <div class="opt active" id="opt-meeting" onclick="pick('meeting')">
@@ -102,8 +107,8 @@
       <textarea id="memo" placeholder="必要な職種・人数・時期、ご質問など"></textarea>
 
       <div class="err" id="err">必須項目（会社名・お名前・メールアドレス）をご入力ください。</div>
-      <button class="btn" onclick="send()">この内容で申込みメールを作成</button>
-      <div class="hint">ボタンを押すと、入力内容を記載したメール作成画面が開きます。<br>そのまま送信してください（送信先：株式会社YSタレント）。</div>
+      <button class="btn" id="submitBtn" onclick="send()">この内容で申込みを送信</button>
+      <div class="hint">ボタンを押すと、入力内容がそのまま株式会社YSタレント（support@ystalent.co.jp）へ送信されます。</div>
 
       <div class="note" id="note-meeting">
         まずはお気軽にお申込みください。担当より、ご希望の方法で日程調整のご連絡を差し上げます。
@@ -112,6 +117,14 @@
         面接会は<b>先着順</b>です。「まず枠を押さえたい」という方もご安心ください。お申込み後に担当が事前打ち合わせを行い、詳細・条件をご説明したうえで正式参加となります。打ち合わせ後のキャンセルも可能です。
       </div>
     </div>
+
+    <!-- 送信完了 -->
+    <div class="done hide" id="done">
+      <div class="ic">✓</div>
+      <h2>お申込みを送信しました</h2>
+      <p>ありがとうございます。担当より、ご希望の方法で<br>日程調整のご連絡を差し上げます。<br>送信先：株式会社YSタレント（support@ystalent.co.jp）</p>
+    </div>
+
     <div class="foot">
       株式会社YSタレント ／ 〒231-0033 神奈川県横浜市中区長者町4-9-1 YS関内ビル<br>
       TEL：045-319-6844 ／ https://www.ystalent.co.jp
@@ -144,12 +157,15 @@
     if(!company||!name||!email){document.getElementById('err').style.display='block';window.scrollTo(0,document.body.scrollHeight);return;}
     document.getElementById('err').style.display='none';
     var lines=[];
+    var kind;
     if(current==='meeting'){
-      lines.push('【お申込み種別】① 打ち合わせ希望');
+      kind='① 打ち合わせ希望';
+      lines.push('【お申込み種別】'+kind);
       var m=document.querySelector('input[name=method]:checked');
       lines.push('ご希望の打ち合わせ方法：'+(m?m.value:''));
     }else{
-      lines.push('【お申込み種別】② 面接会参加');
+      kind='② 面接会参加';
+      lines.push('【お申込み種別】'+kind);
       lines.push('面接会：2026年9月1日(火) インドネシア・ミャンマー合同オンライン（予定）');
       var cs=[];document.querySelectorAll('input[name=country]:checked').forEach(function(c){cs.push(c.value);});
       lines.push('関心のある国：'+(cs.length?cs.join('・'):'未選択'));
@@ -163,8 +179,40 @@
     lines.push('ご質問・ご要望：');
     lines.push(val('memo')||'（なし）');
     var subj=(current==='meeting'?'【介護｜YSタレント】打ち合わせ希望のお申込み':'【介護｜YSタレント】面接会(9/1)参加のお申込み');
-    var href='mailto:support@ystalent.co.jp?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(lines.join('\n'));
-    window.location.href=href;
+
+    var btn=document.getElementById('submitBtn');
+    btn.disabled=true;btn.textContent='送信中…';
+
+    var payload={
+      _subject:subj,
+      _captcha:'false',
+      _template:'table',
+      '種別':kind,
+      '会社名／法人名':company,
+      'お名前':name,
+      '電話番号':(val('tel')||'未記入'),
+      'メールアドレス':email,
+      'ご質問・ご要望':(val('memo')||'（なし）'),
+      '申込内容':lines.join('\n')
+    };
+
+    fetch('https://formsubmit.co/ajax/support@ystalent.co.jp',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d&&(d.success==='true'||d.success===true)){
+        document.getElementById('formCard').classList.add('hide');
+        document.getElementById('done').classList.remove('hide');
+        window.scrollTo(0,0);
+      }else{throw new Error('failed');}
+    }).catch(function(){
+      btn.disabled=false;btn.textContent='この内容で申込みを送信';
+      var e=document.getElementById('err');
+      e.textContent='送信に失敗しました。通信環境をご確認のうえ、再度お試しください。';
+      e.style.display='block';
+      window.scrollTo(0,document.body.scrollHeight);
+    });
   }
 </script>
 </body>
